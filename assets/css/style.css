@@ -1,0 +1,47 @@
+body {
+    padding: 1%;
+    background-image: url("../images/background4.jpeg");
+    background-size:100%;
+    background-repeat: no-repeat;
+}
+
+.header {
+    /* padding: 1%; */
+    text-align: center;
+    /* background-image: url("../images/header2.png"); */
+    /* background-size: 10%; */
+    /* background-repeat: no-repeat; */
+    color: white;
+}
+
+.content {
+    text-shadow: 0 0 20px rgb(148, 133, 133);
+    font-size: 60px;
+    font-family: 'Great Vibes', cursive;
+}
+
+hr {
+	height: 10px;
+	border: 0;
+    box-shadow: 0 10px 10px -10px #8c8b8b inset;
+    width: 35%;
+}
+
+.main-content {
+    /* margin-top: 2%; */
+    background: rgba(80, 91, 100, 0.3);
+    padding: 2%;
+    line-break: 50px;
+    font-size: 30px;
+    font-family: 'Great Vibes', cursive;
+    max-width: auto;
+    margin-left: 20%;
+    height: 580px;
+}
+
+#display {
+    font-size: 55px;
+    text-shadow: 0 0 20px rgb(148, 133, 133);
+    font-family: 'Great Vibes', cursive;
+}
+
