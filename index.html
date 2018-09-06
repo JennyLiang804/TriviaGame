@@ -16,9 +16,9 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <script src="https://code.jquery.com/jquery.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Italianno" rel="stylesheet">
     <!-- <iframe width="0" height="0" src="https://www.youtube.com/embed/p7Vx2up6x-Q?&autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
-    <iframe width="0" height="0" src="https://www.youtube.com/embed/0Yf_Et_mbbw?&autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <!-- <iframe width="0" height="0" src="https://www.youtube.com/embed/0Yf_Et_mbbw?&autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
 </head>
 <body>
     <div id="game">
@@ -27,20 +27,27 @@
             <div class="header">
                 <h1 class="content">Pasta Pasta!</h1>
                 <hr>
-                <div id="display">00:20</div>
+                <div class="display">00:20</div>
             </div>
 
             <div class="row">
                 <div class="col-lg-10">
-                    <div class="main-content">
-
+                    <div class="quizContainer">
+                        <div class="question"></div>
+                        <br>
+                        <ul class="choiceList"></ul>
+                        <div class="quizMessage"></div>
+                        <div class="result"></div>
+                        <br>
+                        <div class="nextButton">Next Question</div>
+                        <br>
                     </div>
                 </div>
             </div>
 
         </div>
     </div>
-
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
 
 </body>
 
