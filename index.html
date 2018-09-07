@@ -17,7 +17,9 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <script src="https://code.jquery.com/jquery.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Italianno" rel="stylesheet">
+    <!-- triditional -->
     <!-- <iframe width="0" height="0" src="https://www.youtube.com/embed/p7Vx2up6x-Q?&autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+    <!-- folk music -->
     <!-- <iframe width="0" height="0" src="https://www.youtube.com/embed/0Yf_Et_mbbw?&autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
 </head>
 <body>
@@ -27,11 +29,16 @@
             <div class="header">
                 <h1 class="content">Pasta Pasta!</h1>
                 <hr>
-                <div class="display">00:20</div>
+                <button id="start">Start</button>
+                <div id="show-number"></div>
             </div>
 
             <div class="row">
                 <div class="col-lg-10">
+                    <div class="intro">
+                    <p>You have 200 seconds to answer each question about pasta!</p>
+                    <p>Buona fortuna!</p>
+                </div>
                     <div class="quizContainer">
                         <div class="question"></div>
                         <br>
@@ -39,7 +46,7 @@
                         <div class="quizMessage"></div>
                         <div class="result"></div>
                         <br>
-                        <div class="nextButton">Next Question</div>
+                        <button class="nextButton">Next Question</button>
                         <br>
                     </div>
                 </div>

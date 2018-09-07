@@ -14,6 +14,28 @@ body {
     color: white;
 }
 
+#start {
+    background: rgba(164, 198, 226, 0.2);
+    width: 15%;
+    max-height: 1%;
+    text-align: center;
+    border-radius: 6px;
+    position: relative;
+    font-size: 30px;
+    color: white;
+    /* font-family: 'Italianno', cursive; */
+    text-shadow: 0 0 20px rgb(148, 133, 133);
+    font-size: 60px;
+    font-family: 'Italianno', cursive;
+
+}
+
+#show-number {
+    text-shadow: 0 0 20px rgb(148, 133, 133);
+    font-size: 60px;
+    font-family: 'Italianno', cursive;
+}
+
 .content {
     text-shadow: 0 0 20px rgb(148, 133, 133);
     font-size: 60px;
@@ -31,8 +53,24 @@ ul {
     list-style: none;
 }
 
+.intro {
+    margin-top: 2%;
+    background: rgba(80, 91, 100, 0.3);
+    padding: 2%;
+    line-break: 50px;
+    font-size: 35px;
+    font-family: 'Italianno', cursive;
+    max-width: auto;
+    margin-left: 20%;
+    /* height: 580px; */
+    color: white;
+    /* box-shadow: 10px 10px 5px rgb(27, 27, 27); */
+    position: relative;
+    text-align: center;
+}
+
 .quizContainer {
-    /* margin-top: 2%; */
+    margin-top: 2%;
     background: rgba(80, 91, 100, 0.3);
     padding: 2%;
     line-break: 50px;
@@ -64,6 +102,8 @@ ul {
     position: relative;
     padding: 1%;
     font-size: 30px;
+    font-weight: 100;
+    color: white;
 }
 
 .result {

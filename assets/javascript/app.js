@@ -42,28 +42,47 @@ var questions = [{
 var currentQuestion = 0;
 var correctAnswers = 0;
 var quizOver = false;
+var timer = 3;
+var intervalId;
+
+
+
+ $("#start").on("click", run);
+ $(".quizContainer").hide();
+ 
+ 
+ function run() {
+     intervalId = setInterval(decrement, 1000);
+     $("#start").hide();
+     $(".intro").hide();
+ }
+
+ function decrement(){
+     timer--;
+     $("#show-number").html("<h1> Time Left: " + timer + "</h1>");
+     $(".quizContainer").show();
+
+     if (timer === 0) {
+         stop();
+         alert("Time Up!");
+
+         displayScore();
+         $(".question").hide();
+         $(".choiceList").hide();
+         $(document).find(".nextButton").text("play Again?");
+         quizOver = true;
+     }
+ }
+
+ function stop() {
+     clearInterval(intervalId);
+ }
+
+
+
 
 $(document).ready(function () {
-
-    // $(function(){
-    //     var time = 20;
-    
-    //     function redirect(){
-    //         setTimeout(redirect, 1000);
-    //         $(".display").html(time);
-    //         if(time == 0){
-    //             stop
-    //             window.location.displayScore;
-    //         }
-            
-    //         time --;
-    //     }
-    
-    //     redirect();
-    
-    //     console.log(time);
-    // })
-
+    //display first question
     displayCurrentQuestion();
     $(this).find(".quizMessage").hide();
 
@@ -88,6 +107,8 @@ $(document).ready(function () {
                     displayCurrentQuestion();
                 } else {
                     displayScore();
+                    $(".question").hide();
+                    $(".choiceList").hide();
                     $(document).find(".nextButton").text("play Again?");
                     quizOver = true;
                 }
@@ -98,10 +119,13 @@ $(document).ready(function () {
             resetQuiz();
             displayCurrentQuestion();
             hideScore();
+
+            
         }
     });
 });
 
+//displays the current question and the choices
 function displayCurrentQuestion(){
 
     var question = questions[currentQuestion].question;
@@ -110,7 +134,7 @@ function displayCurrentQuestion(){
     var numChoices = questions[currentQuestion].choices.length;
 
     $(questionClass).text(question);
-
+    //only shows the choices to current question
     $(choiceList).find("li").remove();
 
     var choice;
@@ -121,9 +145,15 @@ function displayCurrentQuestion(){
 }
 
 function resetQuiz() {
-    currentQuestion = 0;
-    currectAnswers = 0;
+    // whatever makes the page reload. 
+    console.log("reset!")
+    correntQuestion = 0;
+    correctAnswers = 0;
+    
+    $(".question").show();
+    $(".choiceList").show();
     hideScore();
+    console.log(correctAnswers)
 }
 
 function displayScore(){
@@ -134,6 +164,13 @@ function displayScore(){
 function hideScore(){
     $(document).find(".result").hide();
 }
+
+function playAgain() {
+    $("#start").on("click", run);
+    $(".quizContainer").show();
+
+}
+
 
 
 
