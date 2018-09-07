@@ -21,7 +21,6 @@ body {
     text-align: center;
     border-radius: 6px;
     position: relative;
-    font-size: 30px;
     color: white;
     /* font-family: 'Italianno', cursive; */
     text-shadow: 0 0 20px rgb(148, 133, 133);
@@ -96,7 +95,6 @@ ul {
 
 .nextButton {
     background: rgba(164, 198, 226, 0.2);
-    width: 25%;
     text-align: center;
     border-radius: 6px;
     position: relative;
@@ -111,3 +109,61 @@ ul {
     font-size: 60px;
 }
 
+/* 768 640 */
+@media screen and (max-width:980px) {
+#start {
+    font-size: 30px;
+}
+.intro {
+    margin-left: 0%;
+}
+.quizContainer {
+    margin-left: 0%;
+}
+.question {
+    font-size: 35px;
+}
+}
+
+@media screen and (max-width:768px) {
+.content {
+    font-size: 35px;
+}
+#start {
+    font-size: 30px;
+}
+.intro{
+    max-width: 80%;
+    margin-left: 70px;
+}
+.quizContainer {
+    max-width: 80%;
+    margin-left: 70px;
+}
+.nextButton {
+    font-size: 35px;
+    background: rgba(164, 198, 226, 0.2);
+}
+}
+
+@media screen and (max-width:640px) {
+#show-number {
+    font-size: 15px;
+}
+.intro {
+    max-width: 75%;
+    margin-left: 65px;
+}
+.quizContainer{
+    max-width: 75%;
+    margin-left: 65px;
+}
+.choiceList {
+    font-size: 25px;
+}
+
+.nextButton {
+    font-size: 55%;
+}
+    
+}
