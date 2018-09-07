@@ -1,48 +1,49 @@
 var questions = [{
-    question: "This kind of common, square pasta is stuffed with ground meat or vefetables. What kind of pasta is this?",
+    question: "1. This kind of common, square pasta is stuffed with ground meat or vefetables. What kind of pasta is this?",
     choices: [" Orzo", " Alphabet", " Ravioli", " Lasagna"],
     correctAnswer: 2
 }, {
-    question: "What is the technical name for the red sauce commonly used on spaghetti and pizza?",
+    question: "2. What is the technical name for the red sauce commonly used on spaghetti and pizza?",
     choices: [" Red sauce", " Ketchup", " Pasta sauce", " Marinara sauce"],
     correctAnswer: 3
 }, {
-    question: "What kind of flat pasta, found in sheets with fluted edges, is often mixed with cheese and meat sauce in layers?",
+    question: "3. What kind of flat pasta, found in sheets with fluted edges, is often mixed with cheese and meat sauce in layers?",
     choices: [" Spaghetti", " Lasagna", " Fettuccine", " Orzo"],
     correctAnswer: 0
 }, {
-    question: "This type of pasta is long and stringy, and very popular throughout the west. It can be topped with tomato sauce, Parmesan cheese, and meatballs.",
+    question: "4. This type of pasta is long and stringy, and very popular throughout the west. It can be topped with tomato sauce, Parmesan cheese, and meatballs.",
     choices: [" Fettuccine", " Angle hair", " Spaghetti", " Bucatini"],
     correctAnswer: 2
 }, {
-    question: "Which of these is not an ingredient in pasta?",
+    question: "5. Which of these is not an ingredient in pasta?",
     choices: [" Flour", " Cream", " Water", " egg"],
     correctAnswer: 1
 }, {
-    question: "Which continent does not sell pasta?",
+    question: "6. Which continent does not sell pasta?",
     choices: [" Antarctica", " Africa", " Asia", " Australia"],
     correctAnswer: 0
 }, {
-    question: "The average American ate 20lbs of pasta in 1957. How much pasta did the average Italian eat?",
-    choices: [" 100 lbs", " 65 lbs", " 40 lbs", " 80 lbs"],
+    question: "7. The average American ate 20lbs of pasta in 1957. How much pasta did the average Italian eat?",
+    choices: [" 100 lbs", " 80 lbs", " 65 lbs", " 40 lbs" ],
     correctAnswer: 1
-},{
-    question: "Udon, Somen, Rice sticks, and Ramen are all types of pasta.",
+}, {
+    question: "8. Udon, Somen, Rice sticks, and Ramen are all types of pasta.",
     choices: [" True", " False"],
     correctAnswer: 0
 }, {
-    question: "In 18th century England, which of the following was a synonym for macaroni?",
+    question: "9. In 18th century England, which of the following was a synonym for macaroni?",
     choices: [" Spiral", " Cheese", " Perfection", " Moist"],
     correctAnswer: 2
 }, {
-    question: "Do you think pasta is fattening? How many grams of fat does one cup of cooked pasta have?",
-    choices: [" 1 gram", " 15 grams", " 40 grams", " 100 grams"]
+    question: "10. Do you think pasta is fattening? How many grams of fat does one cup of cooked pasta have?",
+    choices: [" 1 gram", " 15 grams", " 40 grams", " 100 grams"],
+    correctAnswer: 0
 }];
 
 var currentQuestion = 0;
 var correctAnswers = 0;
 var quizOver = false;
-var timer = 200;
+var secs = 200;
 var intervalId;
 
 
@@ -50,36 +51,36 @@ var intervalId;
 $(document).ready(function () {
     $("#start").on("click", run);
     $(".quizContainer").hide();
-    
-    
-    
+
     function run() {
         intervalId = setInterval(decrement, 1000);
         $("#start").hide();
         $(".intro").hide();
     }
-   
-    function decrement(){
-        timer--;
-        $("#show-number").html("<h1> Time Left: " + timer + "</h1>");
+
+    function decrement() {
+        secs--;
+        $("#show-number").html("<h1> Time Left: " + secs + "</h1>");
         $(".quizContainer").show();
 
-        
-   
-        if (timer === 0) {
+
+
+        if (secs === 0) {
             stop();
             alert("Time Up!");
-   
+
             displayScore();
             $(".question").hide();
             $(".choiceList").hide();
+            $("#show-number").hide();
             $(document).find(".nextButton").text("play Again?");
             quizOver = true;
         }
     }
-   
+
     function stop() {
         clearInterval(intervalId);
+
     }
 
     //display first question
@@ -110,24 +111,26 @@ $(document).ready(function () {
                     stop();
                     $(".question").hide();
                     $(".choiceList").hide();
+                    $("#show-number").hide();
                     $(document).find(".nextButton").text("play Again?");
                     quizOver = true;
                 }
             }
         } else {
             quizOver = false;
-            $(document).find(".nextButton").text ("Next Question");
+            $(document).find(".nextButton").text("Next Question");
             resetQuiz();
             displayCurrentQuestion();
             hideScore();
+            $("#show-number").hide();
 
-            
+
         }
     });
 });
 
 //displays the current question and the choices
-function displayCurrentQuestion(){
+function displayCurrentQuestion() {
 
     var question = questions[currentQuestion].question;
     var questionClass = $(document).find(".quizContainer > .question");
@@ -147,25 +150,59 @@ function displayCurrentQuestion(){
 
 function resetQuiz() {
     // whatever makes the page reload. 
-    location.reload();
+    // location.reload();
     console.log("reset!")
-    // correntQuestion = 0;
-    // correctAnswers = 0;
+    currentQuestion = 0;
+    correctAnswers = 0;
+    $(".question").hide();
+    $(".choiceList").hide();
+    $("#start").show();
+    $(".quizContainer").hide();
+    $("#start").on("click", run);
+    var secs = 200;
+    function run() {
+        intervalId = setInterval(decrement, 1000);
+        $("#start").hide();
+        $('#show-number').show();
+    }
+    function decrement() {
+        secs--;
+        $("#show-number").html("<h1> Time Left: " + secs + "</h1>");
+        // $(".quizContainer").show();
+        $(".question").show();
+        $(".choiceList").show();
+
+
+        if (secs === 0) {
+            stop();
+            alert("Time Up!");
+
+            displayScore();
+            $(".question").hide();
+            $(".choiceList").hide();
+            $(document).find(".nextButton").text("play Again?");
+            quizOver = true;
+        }
+    }
+
+    function stop() {
+        clearInterval(intervalId);
+        $("#show-number").hide();
+    }
+
     
-    // $(".question").show();
-    // $(".choiceList").show();
-    // hideScore();
-    // console.log(correctAnswers)
-    // $("#start").show();
-    // $("#start").on("click", run);
+    hideScore();
+    console.log(correctAnswers)
+
+
 }
 
-function displayScore(){
+function displayScore() {
     $(document).find(".quizContainer > .result").text("You Scored: " + correctAnswers + " out of " + questions.length);
     $(document).find(".quizContainer > .result").show();
 }
 
-function hideScore(){
+function hideScore() {
     $(document).find(".result").hide();
 }
 
