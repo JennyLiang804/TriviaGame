@@ -2,15 +2,10 @@ body {
     padding: 1%;
     background-image: url("../images/background4.jpeg");
     background-size:100%;
-    /* background-repeat: no-repeat; */
 }
 
 .header {
-    /* padding: 1%; */
     text-align: center;
-    /* background-image: url("../images/header2.png"); */
-    /* background-size: 10%; */
-    /* background-repeat: no-repeat; */
     color: white;
 }
 
@@ -22,7 +17,6 @@ body {
     border-radius: 6px;
     position: relative;
     color: white;
-    /* font-family: 'Italianno', cursive; */
     text-shadow: 0 0 20px rgb(148, 133, 133);
     font-size: 60px;
     font-family: 'Italianno', cursive;
@@ -61,9 +55,7 @@ ul {
     font-family: 'Italianno', cursive;
     max-width: auto;
     margin-left: 20%;
-    /* height: 580px; */
     color: white;
-    /* box-shadow: 10px 10px 5px rgb(27, 27, 27); */
     position: relative;
     text-align: center;
 }
@@ -77,9 +69,7 @@ ul {
     font-family: 'Italianno', cursive;
     max-width: auto;
     margin-left: 20%;
-    /* height: 580px; */
     color: white;
-    /* box-shadow: 10px 10px 5px rgb(27, 27, 27); */
     position: relative;
 }
 
@@ -109,7 +99,7 @@ ul {
     font-size: 60px;
 }
 
-/* 768 640 */
+
 @media screen and (max-width:980px) {
 #start {
     font-size: 30px;

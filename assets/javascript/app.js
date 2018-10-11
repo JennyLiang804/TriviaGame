@@ -150,7 +150,7 @@ function displayCurrentQuestion() {
 
 function resetQuiz() {
     // whatever makes the page reload. 
-    // location.reload();
+    location.reload();
     console.log("reset!")
     currentQuestion = 0;
     correctAnswers = 0;
